@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>PDF Upload Success</title>
-</head>
-<body>
-    <h1>PDF Processed Successfully!</h1>
-    <h2>Extracted Data:</h2>
-    <ul>
-        {% for key, value in extracted_data.items %}
-            <li><strong>{{ key }}:</strong> {{ value|linebreaksbr }}</li>
-        {% endfor %}
-    </ul>
-    <p><a href="{% url 'upload_pdf' %}">Upload another PDF</a></p>
-</body>
+    <head>
+        <title>PDF Upload Success</title>
+    </head>
+    <body>
+        <main style="background-image: url('/static/images/mps.jpg'); height: 100%;">
+            <h1>PDF Processed Successfully!</h1>
+            <h2>Extracted Data:</h2>
+            <ul>
+                {% for key, value in extracted_data.items %}
+                    <li><strong>{{ key }}:</strong> {{ value|linebreaksbr }}</li>
+                {% endfor %}
+            </ul>
+            <p><a href="{% url 'upload_pdf' %}">Upload another PDF</a></p>
+        </main>
+    </body>
 </html>

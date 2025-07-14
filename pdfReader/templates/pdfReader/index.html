@@ -4,17 +4,21 @@
     </header>
 
     <body>
-        <div class="banner-wrapper">
-            <img src="static/images/mps.jpg" alt="Mapple Premium Service Banner">
-        </div>
-        <h1>VIVO COMPLAINS UPLOADER</h1>
-        <p>Please upload the PDF file to extract the data into the database</p>
-        <form method="POST" enctype="multipart/form-data" action="{% url 'upload_pdf' %}">
-            {% csrf_token %} {# Django's security tag for preventing Cross-Site Request Forgery #}
-
-            {{ form.as_p }} {# Renders your form fields as paragraphs #}
-
-            <button type="submit">Upload PDF</button>
-        </form>
+        <main style="background-image: url('/static/images/mps.jpg'); height: 100%;">
+            <!--
+                <div class="banner-wrapper">
+                    <img src="static/images/mps.jpg" alt="Mapple Premium Service Banner">
+                </div>
+            -->
+            <h1>VIVO COMPLAINS UPLOADER</h1>
+            <p>Please upload the PDF file to extract the data into the database</p>
+            <form method="POST" enctype="multipart/form-data" action="{% url 'upload_pdf' %}">
+                {% csrf_token %} {# Django's security tag for preventing Cross-Site Request Forgery #}
+    
+                {{ form.as_p }} {# Renders your form fields as paragraphs #}
+    
+                <button type="submit">Upload PDF</button>
+            </form>
+        </main>
     </body>
 </html>
